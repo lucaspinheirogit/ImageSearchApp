@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pesquisador de imagens JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+
+<body>
+    <h1>Pesquisador de imagens JavaScript</h1>
+    <form>
+        <label style="font-size: 1.5em" for="palavra">Pesquisa:</label>
+        <input class="u-full-width" type="text" id="palavra" name="palavra" placeholder="Digite uma palavra...">
+        <button type="submit">Pesquisar</button>
+    </form>
+    <div style="text-align: center">
+        <img id="loadingImage" src="./loading.gif">
+    </div>
+
+    <section class="imagens">
+
+    </section>
+    <footer>
+        <h6>Desenvolvido por <a href="www.google.com">Lucas Pinheiro &copy</a></h6>
+    </footer>
+</body>
+<script src="client.js"></script>
+
+</html>
