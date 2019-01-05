@@ -41,6 +41,7 @@ form.addEventListener('submit', (evt) => {
 
                 var img = document.createElement("img");
                 img.src = url;
+                img.onclick = expandirIMG;
                 img.setAttribute('title', descricao);
 
 
@@ -52,5 +53,18 @@ form.addEventListener('submit', (evt) => {
         });
 });
 
+function expandirIMG(evt) {
+    var modal = document.getElementById('myModal');
+    var modalImg = document.getElementById("img01");
+ 
+    modal.style.display = "flex";
+    modalImg.src = evt.path[0].src;
+}
+
+var span = document.getElementsByClassName("fechar")[0];
+
+span.onclick = function () {
+    var modal = document.getElementById('myModal').style.display = "none";
+}
 
 
