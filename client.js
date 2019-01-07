@@ -1,6 +1,6 @@
 var form = document.querySelector("form");
 var input = document.querySelector("input");
-var loading = document.querySelector("#loadingImage");
+var loading = document.querySelector("#loading");
 var sectionImagens = document.querySelector(".imagens");
 
 loading.style.display = 'none';
@@ -33,22 +33,28 @@ form.addEventListener('submit', (evt) => {
 
             imagens = images;
 
-            console.log(imagens);
+            console.log(imagens.data.length);
 
-            imagens.data.forEach(imagem => {
-                var url = imagem.assets.huge_thumb.url;
-                var descricao = imagem.description;
+            if(imagens.data.length > 0){
+                imagens.data.forEach(imagem => {
+                    var url = imagem.assets.huge_thumb.url;
+                    var descricao = imagem.description;
+    
+                    var img = document.createElement("img");
+                    img.src = url;
+                    img.onclick = expandirIMG;
+                    img.setAttribute('title', descricao);
+    
+    
+                    sectionImagens.appendChild(img);
+    
+    
+                });
+            }else{
+                sectionImagens.innerHTML = '<b>Nenhum resultado encontrado<b/>';
+            }
 
-                var img = document.createElement("img");
-                img.src = url;
-                img.onclick = expandirIMG;
-                img.setAttribute('title', descricao);
-
-
-                sectionImagens.appendChild(img);
-
-
-            });
+            
             loading.style.display = 'none';
         });
 });
